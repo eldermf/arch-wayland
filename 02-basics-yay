@@ -1,0 +1,33 @@
+#!/bin/bash
+
+###################################################
+#												  #
+# ==> Autor: Elder M. Fouraux                     #
+#                                                 #
+# ==> Descrição: video and files basic apps       #
+#				(JUL/2022)						  #
+###################################################
+
+{
+echo -e "Let's install Wayfire. We can proceed? (y/N)?"
+read answer
+    if [[ $answer = [sSyY] ]]; then
+        echo -e "\nInstalling...\n"
+
+		###  To install Basic Wayfire:  ####
+		
+        yay -S wayfire wl-shell wf-config wcm wf-recorder-git wlogout wdisplays greetd nwg-look wlrandr wayfire-plugins-extra
+		
+		###  To install Basic Hyprland:  ####
+		
+        yay -S lib-xcb xcb-proto xcb-util xcb-util-keysyms libxfixies libx11 libx-composite xorg-xinput libxrandr pixman cairo pango wayland-protocols wlroots
+            		
+    else
+        sair
+    fi
+}
+
+sair() {
+    echo -e "\nGoing out...\n"
+    exit 0
+}
